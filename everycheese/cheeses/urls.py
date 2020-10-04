@@ -13,7 +13,7 @@ urlpatterns = [
         name='detail'
     ),
     path(
-        route='~add/',
+        route='add/new/',
         view=views.CheeseCreateView.as_view(),
         name='add'
     )
