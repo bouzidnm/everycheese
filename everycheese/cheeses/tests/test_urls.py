@@ -19,4 +19,6 @@ def test_list_resolve():
     assert resolve('/cheeses/').view_name == 'cheeses:list'
 
 def test_add_reverse():
-    assert resolve('cheeses:add') == '/cheeses/add/new/'
+    assert reverse('cheeses:add') == '/cheeses/add/new/'
+
+## Add the rest of the tests later
