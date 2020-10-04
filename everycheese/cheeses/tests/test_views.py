@@ -79,6 +79,8 @@ def test_detail_contains_cheese_data(rf):
     assertContains(response, cheese.country_of_origin.name)
 
 def test_cheese_create_form_valid(client, user):
+    client.force_login(user)
+
     form_data = {
         'name': 'Paski Sir',
         'description': 'A salty hard cheese',
