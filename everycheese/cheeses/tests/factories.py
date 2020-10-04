@@ -4,6 +4,7 @@ import factory
 import factory.fuzzy
 
 from ..models import Cheese
+from everycheese.users.tests.factories import UserFactory
 
 
 class CheeseFactory(factory.django.DjangoModelFactory):
@@ -16,7 +17,7 @@ class CheeseFactory(factory.django.DjangoModelFactory):
         [x[0] for x in Cheese.Firmness.choices]
         )
     country_of_origin = factory.Faker('country_code')
-
+    creator = UserFactory()
 
     class Meta:
         model = Cheese
