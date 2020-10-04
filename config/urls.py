@@ -25,6 +25,11 @@ urlpatterns = [
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path(
+        # for a different url, e.g., 'les-fromages/', just change here (named urls)
+        "cheeses/",
+        include("everycheese.cheeses.urls", namespace="cheeses")
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
