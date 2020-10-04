@@ -6,9 +6,10 @@
 
 
 <h2>Cheese List</h2>
+
 <ul>
 {% for cheese in cheese_list %}
-    <li><a href="#TODO">{{ cheese.name }}</a></li>
+    <li> <a href="{% url 'cheeses:detail' cheese.slug %}"></li>
 {% endfor %}
 </ul>
 
