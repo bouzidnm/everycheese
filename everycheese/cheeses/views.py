@@ -20,10 +20,10 @@ class CheeseCreateView(LoginRequiredMixin, CreateView):
 
 class CheeseUpdateView(LoginRequiredMixin, UpdateView):
     model = Cheese
-    fields = {
+    fields = [
         'name',
         'description',
         'firmness',
         'country_of_origin'
-    }
+    ]
     action = "Update"
