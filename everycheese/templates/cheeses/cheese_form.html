@@ -3,18 +3,18 @@
 
 {% block title %}{{ view.action|default:"Add" }} Cheese{% endblock title %}
 
-
 {% block content %}
-{% with action=view.action|default:"Add" %}
+{% with action=view.action|default:"Add"%}
+
 
 <h1>{{ action }} Cheese</h1>
 
-<form method = "post" action=".">
+<form method="post" action=".">
 {% csrf_token %}
+
 {{ form|crispy }}
 
 <button type="submit" class="btn btn-primary">{{ action }}</button>
-
 </form>
 
 

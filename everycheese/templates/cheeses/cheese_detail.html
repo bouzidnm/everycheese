@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Cheeses:{{ cheese.name }}{% endblock title %}
+{%block title %} Cheeses:{{ cheese.name }}{% endblock title %}
 
 {% block content %}
 
@@ -12,7 +12,6 @@
     <p>Firmness: {{ cheese.get_firmness_display }}</p>
 {% endif %}
 
-
 {% if cheese.description %}
     <p>Description: {{ cheese.description }}</p>
 {% endif %}
@@ -23,17 +22,21 @@
     </p>
 {% endif %}
 
-
 <hr />
 
 {% if cheese.creator %}
-    <h3>
-        Submitted by <a href="{{ cheese.creator.get_absolute_url }}">{{ cheese.creator.username }}</a>
-    </h3>
+    <h3>Submitted by <a href="{{ cheese.creator.get_absolute_url }}">{{ cheese.creator.username }}</a></h3>
     {% if cheese.creator.name %}
         <p>{{ cheese.creator.name }}</p>
     {% endif %}
 {% endif %}
+
+
+<p>
+    <a class="btn btn-primary" href="{% url 'cheeses:update' cheese.slug %}" role="button">
+        Update
+    </a>
+</p>
 
 
 
